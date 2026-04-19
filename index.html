@@ -3,18 +3,17 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Excellors</title>
+<title>Excellors Engineering Solutions</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/main.css">
-
 </head>
+
 <body>
 
 <!-- NAVBAR -->
 <header class="navbar">
   <div class="logo">
-    <img src="img/logo.png" alt="">
     <span>Excellors</span>
   </div>
 
@@ -30,7 +29,10 @@
 <!-- HERO -->
 <section id="hero" class="hero">
   <h1>Engineering Solutions for Steel & Industrial Plants</h1>
-  <p>Cost-effective spares, manufacturing, and maintenance services.</p>
+  <p>
+    We provide engineering design, manufacturing, maintenance, and spare parts 
+    solutions for high-performance industrial operations.
+  </p>
 
   <div class="hero-btns">
     <a href="#contact" class="btn primary">Get a Quote</a>
@@ -40,9 +42,9 @@
 
 <!-- TRUST -->
 <section class="trust">
-  <div><h3>50+</h3><p>Projects</p></div>
-  <div><h3>10+</h3><p>Clients</p></div>
-  <div><h3>5+</h3><p>Years</p></div>
+  <div><h3 class="counter" data-target="50">0</h3><p>Projects</p></div>
+  <div><h3 class="counter" data-target="10">0</h3><p>Clients</p></div>
+  <div><h3 class="counter" data-target="5">0</h3><p>Years Experience</p></div>
 </section>
 
 <!-- SERVICES -->
@@ -52,22 +54,44 @@
   <div class="grid">
     <div class="card">
       <h3>Engineering Design</h3>
-      <p>Custom industrial solutions</p>
+      <p>Custom engineering solutions tailored for steel plants and heavy industries.</p>
     </div>
 
     <div class="card">
       <h3>Manufacturing</h3>
-      <p>High-quality spare production</p>
+      <p>High-quality production of industrial spare parts with precision and reliability.</p>
     </div>
 
     <div class="card">
       <h3>Maintenance</h3>
-      <p>Efficient plant services</p>
+      <p>Efficient plant maintenance services ensuring uninterrupted operations.</p>
     </div>
 
     <div class="card">
-      <h3>Spare Parts</h3>
-      <p>Reliable supply chain</p>
+      <h3>Spare Parts Supply</h3>
+      <p>Reliable and cost-effective supply chain for industrial components.</p>
+    </div>
+  </div>
+</section>
+
+<!-- WHY US -->
+<section class="section light">
+  <h2>Why Choose Us</h2>
+
+  <div class="grid">
+    <div class="card">
+      <h3>Industry Expertise</h3>
+      <p>Extensive experience in steel and heavy industrial sectors.</p>
+    </div>
+
+    <div class="card">
+      <h3>Quality Assurance</h3>
+      <p>Strict quality control to ensure durability and performance.</p>
+    </div>
+
+    <div class="card">
+      <h3>Cost Efficiency</h3>
+      <p>Optimized engineering solutions that reduce operational costs.</p>
     </div>
   </div>
 </section>
@@ -79,40 +103,80 @@
   <div class="grid">
     <div class="dark-card">
       <h3>Steel Plants</h3>
-      <p>End-to-end engineering solutions</p>
+      <p>End-to-end engineering and maintenance solutions.</p>
     </div>
 
     <div class="dark-card">
-      <h3>Manufacturing</h3>
-      <p>Optimized production support</p>
+      <h3>Manufacturing Units</h3>
+      <p>Optimizing production efficiency and reliability.</p>
     </div>
 
     <div class="dark-card">
       <h3>Heavy Industries</h3>
-      <p>Large-scale industrial systems</p>
+      <p>Robust support for large-scale industrial operations.</p>
     </div>
   </div>
 </section>
 
-<!-- CLIENTS -->
+<!-- CLIENTS (SCROLLING) -->
 <section id="clients" class="section">
   <h2>Our Clients</h2>
 
-  <div class="clients">
-    <img src="img/pic1.png">
-    <img src="img/pic2.png">
-    <img src="img/pic3.png">
-    <img src="img/pic4.png">
-    <img src="img/pic5.png">
-    <img src="img/pic6.png">
+  <div class="clients-slider">
+    <div class="clients-track">
+
+      <!-- ORIGINAL -->
+      <img src="img/pic1.png">
+      <img src="img/pic2.png">
+      <img src="img/pic3.png">
+      <img src="img/pic4.png">
+      <img src="img/pic5.png">
+      <img src="img/pic6.png">
+
+      <!-- DUPLICATE -->
+      <img src="img/pic1.png">
+      <img src="img/pic2.png">
+      <img src="img/pic3.png">
+      <img src="img/pic4.png">
+      <img src="img/pic5.png">
+      <img src="img/pic6.png">
+
+    </div>
   </div>
 </section>
 
 <!-- CTA -->
 <section id="contact" class="cta">
-  <h2>Ready to Optimize Your Plant?</h2>
+  <h2>Ready to Optimize Your Plant Operations?</h2>
   <a href="#" class="btn primary">Request a Quote</a>
 </section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <p>© 2026 Excellors Engineering Solutions</p>
+</footer>
+
+<!-- JS -->
+<script>
+// COUNTER ANIMATION
+const counters = document.querySelectorAll(".counter");
+
+counters.forEach(counter => {
+  const update = () => {
+    const target = +counter.getAttribute("data-target");
+    const count = +counter.innerText;
+    const increment = target / 100;
+
+    if (count < target) {
+      counter.innerText = Math.ceil(count + increment);
+      setTimeout(update, 20);
+    } else {
+      counter.innerText = target + "+";
+    }
+  };
+  update();
+});
+</script>
 
 </body>
 </html>

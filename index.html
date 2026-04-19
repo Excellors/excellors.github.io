@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Excellors Engineering Solutions</title>
+<title>Excellors</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/main.css">
@@ -12,117 +12,107 @@
 <body>
 
 <!-- NAVBAR -->
-<div class="navbar">
+<header class="navbar">
   <div class="logo">
-    <img src="img/logo.png" alt="logo">
+    <img src="img/logo.png" alt="">
     <span>Excellors</span>
   </div>
 
-  <div>
+  <nav>
     <a href="#hero">Home</a>
     <a href="#services">Services</a>
     <a href="#industries">Industries</a>
     <a href="#clients">Clients</a>
     <a href="#contact">Contact</a>
-  </div>
-</div>
+  </nav>
+</header>
 
 <!-- HERO -->
 <section id="hero" class="hero">
   <h1>Engineering Solutions for Steel & Industrial Plants</h1>
-  <p>Cost-effective spares, manufacturing, and maintenance services for high-performance industrial operations.</p>
+  <p>Cost-effective spares, manufacturing, and maintenance services.</p>
 
-  <a href="#contact" class="btn primary"><span>Get a Quote</span></a>
-  <a href="#services" class="btn secondary"><span>View Services</span></a>
+  <div class="hero-btns">
+    <a href="#contact" class="btn primary">Get a Quote</a>
+    <a href="#services" class="btn outline">Our Services</a>
+  </div>
 </section>
 
 <!-- TRUST -->
-<section class="trust fade-in">
+<section class="trust">
   <div><h3>50+</h3><p>Projects</p></div>
   <div><h3>10+</h3><p>Clients</p></div>
-  <div><h3>5+</h3><p>Years Experience</p></div>
+  <div><h3>5+</h3><p>Years</p></div>
 </section>
 
 <!-- SERVICES -->
-<section id="services" class="section fade-in">
+<section id="services" class="section">
   <h2>Our Services</h2>
 
-  <div class="services">
-    <div class="card"><h3>⚙️ Engineering Design</h3><p>Custom solutions tailored for industrial needs.</p></div>
-    <div class="card"><h3>🏭 Manufacturing</h3><p>High-quality industrial spare parts production.</p></div>
-    <div class="card"><h3>🛠 Maintenance</h3><p>Efficient plant maintenance services.</p></div>
-    <div class="card"><h3>🔩 Spare Parts</h3><p>Reliable and cost-effective supply solutions.</p></div>
+  <div class="grid">
+    <div class="card">
+      <h3>Engineering Design</h3>
+      <p>Custom industrial solutions</p>
+    </div>
+
+    <div class="card">
+      <h3>Manufacturing</h3>
+      <p>High-quality spare production</p>
+    </div>
+
+    <div class="card">
+      <h3>Maintenance</h3>
+      <p>Efficient plant services</p>
+    </div>
+
+    <div class="card">
+      <h3>Spare Parts</h3>
+      <p>Reliable supply chain</p>
+    </div>
   </div>
 </section>
 
 <!-- INDUSTRIES -->
-<section id="industries" class="industries-section fade-in">
+<section id="industries" class="dark-section">
   <h2>Industries We Serve</h2>
 
-  <div class="industries-grid">
-    <div class="industry-card">
+  <div class="grid">
+    <div class="dark-card">
       <h3>Steel Plants</h3>
-      <p>Engineering and maintenance solutions for steel industries.</p>
+      <p>End-to-end engineering solutions</p>
     </div>
 
-    <div class="industry-card">
-      <h3>Manufacturing Units</h3>
-      <p>Improving production efficiency with quality solutions.</p>
+    <div class="dark-card">
+      <h3>Manufacturing</h3>
+      <p>Optimized production support</p>
     </div>
 
-    <div class="industry-card">
+    <div class="dark-card">
       <h3>Heavy Industries</h3>
-      <p>Reliable support for large-scale industrial operations.</p>
+      <p>Large-scale industrial systems</p>
     </div>
   </div>
 </section>
 
 <!-- CLIENTS -->
-<section id="clients" class="section fade-in">
+<section id="clients" class="section">
   <h2>Our Clients</h2>
 
-  <div class="clients-slider">
-    <div class="clients-track">
-      <img src="img/pic1.png"><img src="img/pic2.png"><img src="img/pic3.png">
-      <img src="img/pic4.png"><img src="img/pic5.png"><img src="img/pic6.png">
-      <img src="img/pic7.png"><img src="img/pic8.png"><img src="img/pic9.png">
-      <img src="img/pic10.png"><img src="img/pic11.png"><img src="img/pic12.png">
-      <img src="img/pic13.png"><img src="img/pic14.png"><img src="img/pic15.png">
-
-      <!-- duplicate -->
-      <img src="img/pic1.png"><img src="img/pic2.png"><img src="img/pic3.png">
-      <img src="img/pic4.png"><img src="img/pic5.png"><img src="img/pic6.png">
-      <img src="img/pic7.png"><img src="img/pic8.png"><img src="img/pic9.png">
-    </div>
+  <div class="clients">
+    <img src="img/pic1.png">
+    <img src="img/pic2.png">
+    <img src="img/pic3.png">
+    <img src="img/pic4.png">
+    <img src="img/pic5.png">
+    <img src="img/pic6.png">
   </div>
 </section>
 
 <!-- CTA -->
-<section id="contact" class="cta fade-in">
-  <h2>Ready to Optimize Your Plant Operations?</h2>
-  <a href="#" class="btn primary"><span>Request a Quote</span></a>
+<section id="contact" class="cta">
+  <h2>Ready to Optimize Your Plant?</h2>
+  <a href="#" class="btn primary">Request a Quote</a>
 </section>
-
-<!-- FOOTER -->
-<div class="footer">
-  <p>© 2026 Excellors Engineering Solutions</p>
-</div>
-
-<!-- JS -->
-<script>
-const elements = document.querySelectorAll(".fade-in");
-
-function reveal() {
-  elements.forEach(el => {
-    if (el.getBoundingClientRect().top < window.innerHeight - 100) {
-      el.classList.add("show");
-    }
-  });
-}
-
-window.addEventListener("scroll", reveal);
-window.addEventListener("load", reveal);
-</script>
 
 </body>
 </html>

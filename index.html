@@ -7,6 +7,9 @@
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/main.css">
+
+<!-- ICONS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 
 <body>
@@ -14,6 +17,7 @@
 <!-- NAVBAR -->
 <header class="navbar">
   <div class="logo">
+    <img src="/img/logo.png" alt="logo">
     <span>Excellors</span>
   </div>
 
@@ -52,25 +56,31 @@
   <h2>Our Services</h2>
 
   <div class="grid">
+
     <div class="card">
+      <i class="fa-solid fa-gears icon"></i>
       <h3>Engineering Design</h3>
       <p>Custom engineering solutions tailored for steel plants and heavy industries.</p>
     </div>
 
     <div class="card">
+      <i class="fa-solid fa-industry icon"></i>
       <h3>Manufacturing</h3>
       <p>High-quality production of industrial spare parts with precision and reliability.</p>
     </div>
 
     <div class="card">
+      <i class="fa-solid fa-screwdriver-wrench icon"></i>
       <h3>Maintenance</h3>
       <p>Efficient plant maintenance services ensuring uninterrupted operations.</p>
     </div>
 
     <div class="card">
+      <i class="fa-solid fa-cubes icon"></i>
       <h3>Spare Parts Supply</h3>
       <p>Reliable and cost-effective supply chain for industrial components.</p>
     </div>
+
   </div>
 </section>
 
@@ -86,12 +96,12 @@
 
     <div class="card">
       <h3>Quality Assurance</h3>
-      <p>Strict quality control to ensure durability and performance.</p>
+      <p>Strict quality control ensuring durability and performance.</p>
     </div>
 
     <div class="card">
       <h3>Cost Efficiency</h3>
-      <p>Optimized engineering solutions that reduce operational costs.</p>
+      <p>Optimized solutions that reduce operational costs.</p>
     </div>
   </div>
 </section>
@@ -118,28 +128,18 @@
   </div>
 </section>
 
-<!-- CLIENTS (SCROLLING) -->
+<!-- CLIENTS -->
 <section id="clients" class="section">
   <h2>Our Clients</h2>
 
   <div class="clients-slider">
     <div class="clients-track">
 
-      <!-- ORIGINAL -->
-      <img src="img/pic1.png">
-      <img src="img/pic2.png">
-      <img src="img/pic3.png">
-      <img src="img/pic4.png">
-      <img src="img/pic5.png">
-      <img src="img/pic6.png">
+      <img src="img/pic1.png"><img src="img/pic2.png"><img src="img/pic3.png">
+      <img src="img/pic4.png"><img src="img/pic5.png"><img src="img/pic6.png">
 
-      <!-- DUPLICATE -->
-      <img src="img/pic1.png">
-      <img src="img/pic2.png">
-      <img src="img/pic3.png">
-      <img src="img/pic4.png">
-      <img src="img/pic5.png">
-      <img src="img/pic6.png">
+      <img src="img/pic1.png"><img src="img/pic2.png"><img src="img/pic3.png">
+      <img src="img/pic4.png"><img src="img/pic5.png"><img src="img/pic6.png">
 
     </div>
   </div>
@@ -151,24 +151,21 @@
   <a href="#" class="btn primary">Request a Quote</a>
 </section>
 
-<!-- FOOTER -->
 <footer class="footer">
   <p>© 2026 Excellors Engineering Solutions</p>
 </footer>
 
-<!-- JS -->
 <script>
-// COUNTER ANIMATION
+// COUNTER
 const counters = document.querySelectorAll(".counter");
-
 counters.forEach(counter => {
   const update = () => {
     const target = +counter.getAttribute("data-target");
     const count = +counter.innerText;
-    const increment = target / 100;
+    const inc = target / 100;
 
     if (count < target) {
-      counter.innerText = Math.ceil(count + increment);
+      counter.innerText = Math.ceil(count + inc);
       setTimeout(update, 20);
     } else {
       counter.innerText = target + "+";

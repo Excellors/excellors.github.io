@@ -16,6 +16,10 @@
   --text: #4A5568;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 * { margin:0; padding:0; box-sizing:border-box; }
 
 body {
@@ -30,6 +34,9 @@ body {
   padding:20px 10%;
   background:#fff;
   border-bottom:1px solid #eee;
+  position:sticky;
+  top:0;
+  z-index:1000;
 }
 
 .navbar a {
@@ -39,12 +46,22 @@ body {
   font-weight:600;
 }
 
+.navbar a.active {
+  color: var(--secondary);
+}
+
 /* HERO */
 .hero {
   background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
               url('img/slider_1.png') center/cover no-repeat;
   color:#fff;
   padding:120px 10%;
+  background-size:110%;
+  transition:8s ease;
+}
+
+.hero:hover {
+  background-size:120%;
 }
 
 .hero h1 {
@@ -56,6 +73,7 @@ body {
   font-size:18px;
 }
 
+/* BUTTON */
 .btn {
   padding:12px 25px;
   background:var(--primary);
@@ -63,10 +81,29 @@ body {
   text-decoration:none;
   border-radius:6px;
   margin-right:10px;
+  display:inline-block;
+  position:relative;
+  overflow:hidden;
 }
 
-.btn:hover {
+.btn::after {
+  content:"";
+  position:absolute;
+  width:100%;
+  height:100%;
   background:var(--secondary);
+  top:0;
+  left:-100%;
+  transition:0.3s;
+}
+
+.btn:hover::after {
+  left:0;
+}
+
+.btn span {
+  position:relative;
+  z-index:1;
 }
 
 /* TRUST */
@@ -145,6 +182,18 @@ body {
   color:#fff;
 }
 
+/* ANIMATION */
+.fade-in {
+  opacity:0;
+  transform:translateY(30px);
+  transition:0.6s ease;
+}
+
+.fade-in.show {
+  opacity:1;
+  transform:translateY(0);
+}
+
 /* MOBILE */
 @media(max-width:768px){
   .hero h1 { font-size:32px; }
@@ -159,30 +208,30 @@ body {
 <div class="navbar">
   <h2>Excellors</h2>
   <div>
-    <a href="#">Home</a>
-    <a href="#">Services</a>
-    <a href="#">Projects</a>
-    <a href="#">Contact</a>
+    <a href="#hero">Home</a>
+    <a href="#services">Services</a>
+    <a href="#industries">Industries</a>
+    <a href="#contact">Contact</a>
   </div>
 </div>
 
 <!-- HERO -->
-<section class="hero">
+<section id="hero" class="hero">
   <h1>Engineering Solutions for Steel & Industrial Plants</h1>
   <p>Cost-effective spares, manufacturing, and maintenance services for high-performance industrial operations.</p>
-  <a href="#" class="btn">Get a Quote</a>
-  <a href="#" class="btn">Our Services</a>
+  <a href="#contact" class="btn"><span>Get a Quote</span></a>
+  <a href="#services" class="btn"><span>View Services</span></a>
 </section>
 
 <!-- TRUST -->
-<section class="trust">
+<section class="trust fade-in">
   <div><h3>50+</h3><p>Projects</p></div>
   <div><h3>10+</h3><p>Clients</p></div>
   <div><h3>5+</h3><p>Years Experience</p></div>
 </section>
 
 <!-- SERVICES -->
-<section class="section">
+<section id="services" class="section fade-in">
   <h2>Our Services</h2><br>
   <div class="services">
     <div class="card">
@@ -205,7 +254,7 @@ body {
 </section>
 
 <!-- INDUSTRIES -->
-<section class="section">
+<section id="industries" class="section fade-in">
   <h2>Industries We Serve</h2><br>
   <div class="industries">
     <div class="industry">Steel Plants</div>
@@ -215,15 +264,52 @@ body {
 </section>
 
 <!-- CTA -->
-<section class="cta">
+<section id="contact" class="cta fade-in">
   <h2>Ready to Optimize Your Plant Operations?</h2><br>
-  <a href="#" class="btn">Request a Quote</a>
+  <a href="#" class="btn"><span>Request a Quote</span></a>
 </section>
 
 <!-- FOOTER -->
 <div class="footer">
   <p>© 2026 Excellors Engineering Solutions</p>
 </div>
+
+<!-- JS -->
+<script>
+// Active navbar
+const sections = document.querySelectorAll("section");
+const navLinks = document.querySelectorAll(".navbar a");
+
+window.addEventListener("scroll", () => {
+  let current = "";
+
+  sections.forEach(section => {
+    const sectionTop = section.offsetTop - 100;
+    if (scrollY >= sectionTop) {
+      current = section.getAttribute("id");
+    }
+  });
+
+  navLinks.forEach(link => {
+    link.classList.remove("active");
+    if (link.getAttribute("href") === "#" + current) {
+      link.classList.add("active");
+    }
+  });
+});
+
+// Fade animation
+const elements = document.querySelectorAll(".fade-in");
+
+window.addEventListener("scroll", () => {
+  elements.forEach(el => {
+    const position = el.getBoundingClientRect().top;
+    if (position < window.innerHeight - 100) {
+      el.classList.add("show");
+    }
+  });
+});
+</script>
 
 </body>
 </html>

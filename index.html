@@ -7,27 +7,31 @@
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/main.css">
-
-<!-- ICONS -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-</head>
 
+</head>
 <body>
 
 <!-- NAVBAR -->
-<header class="navbar">
+<header class="navbar" id="navbar">
+
   <div class="logo">
-    <img src="img/logo_icon.png" alt="logo">
+    <img src="img/logo.png" alt="logo">
     <span>Excellors</span>
   </div>
 
-  <nav>
+  <nav id="nav-links">
     <a href="#hero">Home</a>
     <a href="#services">Services</a>
     <a href="#industries">Industries</a>
     <a href="#clients">Clients</a>
     <a href="#contact">Contact</a>
   </nav>
+
+  <div class="menu-toggle" id="menu-toggle">
+    <i class="fa-solid fa-bars"></i>
+  </div>
+
 </header>
 
 <!-- HERO -->
@@ -66,43 +70,21 @@
     <div class="card">
       <i class="fa-solid fa-industry icon"></i>
       <h3>Manufacturing</h3>
-      <p>High-quality production of industrial spare parts with precision and reliability.</p>
+      <p>High-quality production of industrial spare parts.</p>
     </div>
 
     <div class="card">
       <i class="fa-solid fa-screwdriver-wrench icon"></i>
       <h3>Maintenance</h3>
-      <p>Efficient plant maintenance services ensuring uninterrupted operations.</p>
+      <p>Efficient plant maintenance ensuring uninterrupted operations.</p>
     </div>
 
     <div class="card">
       <i class="fa-solid fa-cubes icon"></i>
-      <h3>Spare Parts Supply</h3>
-      <p>Reliable and cost-effective supply chain for industrial components.</p>
+      <h3>Spare Parts</h3>
+      <p>Reliable and cost-effective supply solutions.</p>
     </div>
 
-  </div>
-</section>
-
-<!-- WHY US -->
-<section class="section light">
-  <h2>Why Choose Us</h2>
-
-  <div class="grid">
-    <div class="card">
-      <h3>Industry Expertise</h3>
-      <p>Extensive experience in steel and heavy industrial sectors.</p>
-    </div>
-
-    <div class="card">
-      <h3>Quality Assurance</h3>
-      <p>Strict quality control ensuring durability and performance.</p>
-    </div>
-
-    <div class="card">
-      <h3>Cost Efficiency</h3>
-      <p>Optimized solutions that reduce operational costs.</p>
-    </div>
   </div>
 </section>
 
@@ -113,17 +95,17 @@
   <div class="grid">
     <div class="dark-card">
       <h3>Steel Plants</h3>
-      <p>End-to-end engineering and maintenance solutions.</p>
+      <p>End-to-end engineering solutions.</p>
     </div>
 
     <div class="dark-card">
       <h3>Manufacturing Units</h3>
-      <p>Optimizing production efficiency and reliability.</p>
+      <p>Optimized production support.</p>
     </div>
 
     <div class="dark-card">
       <h3>Heavy Industries</h3>
-      <p>Robust support for large-scale industrial operations.</p>
+      <p>Large-scale industrial systems support.</p>
     </div>
   </div>
 </section>
@@ -134,13 +116,19 @@
 
   <div class="clients-slider">
     <div class="clients-track">
+      <img src="img/pic1.png">
+      <img src="img/pic2.png">
+      <img src="img/pic3.png">
+      <img src="img/pic4.png">
+      <img src="img/pic5.png">
+      <img src="img/pic6.png">
 
-      <img src="img/pic1.png"><img src="img/pic2.png"><img src="img/pic3.png">
-      <img src="img/pic4.png"><img src="img/pic5.png"><img src="img/pic6.png">
-
-      <img src="img/pic1.png"><img src="img/pic2.png"><img src="img/pic3.png">
-      <img src="img/pic4.png"><img src="img/pic5.png"><img src="img/pic6.png">
-
+      <img src="img/pic1.png">
+      <img src="img/pic2.png">
+      <img src="img/pic3.png">
+      <img src="img/pic4.png">
+      <img src="img/pic5.png">
+      <img src="img/pic6.png">
     </div>
   </div>
 </section>
@@ -157,22 +145,31 @@
 
 <script>
 // COUNTER
-const counters = document.querySelectorAll(".counter");
-counters.forEach(counter => {
-  const update = () => {
-    const target = +counter.getAttribute("data-target");
-    const count = +counter.innerText;
-    const inc = target / 100;
-
-    if (count < target) {
-      counter.innerText = Math.ceil(count + inc);
-      setTimeout(update, 20);
-    } else {
-      counter.innerText = target + "+";
+document.querySelectorAll(".counter").forEach(counter=>{
+  const update=()=>{
+    const target=+counter.getAttribute("data-target");
+    const count=+counter.innerText;
+    const inc=target/100;
+    if(count<target){
+      counter.innerText=Math.ceil(count+inc);
+      setTimeout(update,20);
+    }else{
+      counter.innerText=target+"+";
     }
   };
   update();
 });
+
+// NAVBAR SCROLL
+window.addEventListener("scroll",()=>{
+  document.getElementById("navbar")
+  .classList.toggle("scrolled",window.scrollY>50);
+});
+
+// MOBILE MENU
+document.getElementById("menu-toggle").onclick=()=>{
+  document.getElementById("nav-links").classList.toggle("active");
+};
 </script>
 
 </body>

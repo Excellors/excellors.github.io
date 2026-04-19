@@ -23,7 +23,7 @@
   </div>
 </div>
 
-<!-- HERO -->
+<!-- HERO (FIXED FALLBACK) -->
 <section id="hero" class="hero">
   <h1>Engineering Solutions for Steel & Industrial Plants</h1>
   <p>Cost-effective spares, manufacturing, and maintenance services for high-performance industrial operations.</p>
@@ -42,81 +42,54 @@
 <section id="services" class="section fade-in">
   <h2>Our Services</h2><br>
   <div class="services">
-    <div class="card">
-      <h3>⚙️ Engineering Design</h3>
-      <p>Custom solutions tailored for industrial needs.</p>
-    </div>
-    <div class="card">
-      <h3>🏭 Manufacturing</h3>
-      <p>High-quality industrial spare parts production.</p>
-    </div>
-    <div class="card">
-      <h3>🛠 Maintenance</h3>
-      <p>Efficient plant maintenance services.</p>
-    </div>
-    <div class="card">
-      <h3>🔩 Spare Parts</h3>
-      <p>Reliable and cost-effective supply solutions.</p>
-    </div>
+    <div class="card"><h3>⚙️ Engineering Design</h3><p>Custom solutions tailored for industrial needs.</p></div>
+    <div class="card"><h3>🏭 Manufacturing</h3><p>High-quality industrial spare parts production.</p></div>
+    <div class="card"><h3>🛠 Maintenance</h3><p>Efficient plant maintenance services.</p></div>
+    <div class="card"><h3>🔩 Spare Parts</h3><p>Reliable and cost-effective supply solutions.</p></div>
   </div>
 </section>
 
-<!-- INDUSTRIES -->
-<section id="industries" class="section fade-in">
-  <h2>Industries We Serve</h2><br>
-  <div class="industries">
-    <div class="industry">Steel Plants</div>
-    <div class="industry">Manufacturing Units</div>
-    <div class="industry">Heavy Industries</div>
+<!-- INDUSTRIES (UPGRADED) -->
+<section id="industries" class="industries-section fade-in">
+  <h2>Industries We Serve</h2>
+
+  <div class="industries-grid">
+    <div class="industry-card">
+      <h3>Steel Plants</h3>
+      <p>End-to-end engineering and maintenance solutions for steel production facilities.</p>
+    </div>
+
+    <div class="industry-card">
+      <h3>Manufacturing Units</h3>
+      <p>Optimizing production efficiency with high-quality spare parts and services.</p>
+    </div>
+
+    <div class="industry-card">
+      <h3>Heavy Industries</h3>
+      <p>Robust engineering support for large-scale industrial operations.</p>
+    </div>
   </div>
 </section>
 
 <!-- CLIENTS -->
 <section id="clients" class="section fade-in">
   <h2 style="text-align:center;">Our Clients</h2><br>
-
   <div class="clients-slider">
     <div class="clients-track">
-      <!-- ORIGINAL -->
-      <img src="img/pic1.png">
-      <img src="img/pic2.png">
-      <img src="img/pic3.png">
-      <img src="img/pic4.png">
-      <img src="img/pic5.png">
-      <img src="img/pic6.png">
-      <img src="img/pic7.png">
-      <img src="img/pic8.png">
-      <img src="img/pic9.png">
-      <img src="img/pic10.png">
-      <img src="img/pic11.png">
-      <img src="img/pic12.png">
-      <img src="img/pic13.png">
-      <img src="img/pic14.png">
-      <img src="img/pic15.png">
-      <img src="img/pic16.png">
-      <img src="img/pic17.png">
-      <img src="img/pic18.png">
+      <img src="img/pic1.png"><img src="img/pic2.png"><img src="img/pic3.png">
+      <img src="img/pic4.png"><img src="img/pic5.png"><img src="img/pic6.png">
+      <img src="img/pic7.png"><img src="img/pic8.png"><img src="img/pic9.png">
+      <img src="img/pic10.png"><img src="img/pic11.png"><img src="img/pic12.png">
+      <img src="img/pic13.png"><img src="img/pic14.png"><img src="img/pic15.png">
+      <img src="img/pic16.png"><img src="img/pic17.png"><img src="img/pic18.png">
       <img src="img/pic19.png">
 
-      <!-- DUPLICATE -->
-      <img src="img/pic1.png">
-      <img src="img/pic2.png">
-      <img src="img/pic3.png">
-      <img src="img/pic4.png">
-      <img src="img/pic5.png">
-      <img src="img/pic6.png">
-      <img src="img/pic7.png">
-      <img src="img/pic8.png">
-      <img src="img/pic9.png">
-      <img src="img/pic10.png">
-      <img src="img/pic11.png">
-      <img src="img/pic12.png">
-      <img src="img/pic13.png">
-      <img src="img/pic14.png">
-      <img src="img/pic15.png">
-      <img src="img/pic16.png">
-      <img src="img/pic17.png">
-      <img src="img/pic18.png">
+      <img src="img/pic1.png"><img src="img/pic2.png"><img src="img/pic3.png">
+      <img src="img/pic4.png"><img src="img/pic5.png"><img src="img/pic6.png">
+      <img src="img/pic7.png"><img src="img/pic8.png"><img src="img/pic9.png">
+      <img src="img/pic10.png"><img src="img/pic11.png"><img src="img/pic12.png">
+      <img src="img/pic13.png"><img src="img/pic14.png"><img src="img/pic15.png">
+      <img src="img/pic16.png"><img src="img/pic17.png"><img src="img/pic18.png">
       <img src="img/pic19.png">
     </div>
   </div>
@@ -124,7 +97,7 @@
 
 <!-- CTA -->
 <section id="contact" class="cta fade-in">
-  <h2>Ready to Optimize Your Plant Operations?</h2><br>
+  <h2>Ready to Optimize Your Plant Operations?</h2>
   <a href="#" class="btn"><span>Request a Quote</span></a>
 </section>
 
@@ -135,38 +108,18 @@
 
 <!-- JS -->
 <script>
-// ACTIVE NAVBAR
-const sections = document.querySelectorAll("section");
-const navLinks = document.querySelectorAll(".navbar a");
-
-window.addEventListener("scroll", () => {
-  let current = "";
-  sections.forEach(section => {
-    const sectionTop = section.offsetTop - 100;
-    if (scrollY >= sectionTop) {
-      current = section.getAttribute("id");
-    }
-  });
-
-  navLinks.forEach(link => {
-    link.classList.remove("active");
-    if (link.getAttribute("href") === "#" + current) {
-      link.classList.add("active");
-    }
-  });
-});
-
-// FADE-IN ANIMATION
 const elements = document.querySelectorAll(".fade-in");
 
-window.addEventListener("scroll", () => {
+function reveal() {
   elements.forEach(el => {
-    const position = el.getBoundingClientRect().top;
-    if (position < window.innerHeight - 100) {
+    if (el.getBoundingClientRect().top < window.innerHeight - 100) {
       el.classList.add("show");
     }
   });
-});
+}
+
+window.addEventListener("scroll", reveal);
+window.addEventListener("load", reveal);
 </script>
 
 </body>

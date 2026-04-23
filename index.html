@@ -179,20 +179,25 @@
 </footer>
 
 <script>
-// MOBILE MENU
-function toggleMenu() {
-  document.getElementById("nav-links").classList.toggle("active");
-}
+window.addEventListener("DOMContentLoaded", function () {
 
-// HERO SLIDER
-let slides = document.querySelectorAll(".hero-slider img");
-let index = 0;
+  const slides = document.querySelectorAll(".hero-slider img");
+  let index = 0;
 
-setInterval(() => {
-  slides[index].classList.remove("active");
-  index = (index + 1) % slides.length;
-  slides[index].classList.add("active");
-}, 4000);
+  function showSlide(i) {
+    slides.forEach((slide) => {
+      slide.classList.remove("active");
+    });
+
+    slides[i].classList.add("active");
+  }
+
+  setInterval(() => {
+    index = (index + 1) % slides.length;
+    showSlide(index);
+  }, 4000);
+
+});
 </script>
 
 </body>

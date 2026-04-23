@@ -13,10 +13,9 @@
 <body>
 
 <!-- NAVBAR -->
-<header class="navbar" id="navbar">
-
+<header class="navbar">
   <div class="logo">
-    <img src="img/logo_dark.png" alt="logo">
+    <img src="img/logo.png" alt="logo">
   </div>
 
   <nav id="nav-links">
@@ -27,31 +26,42 @@
     <a href="#contact">Contact</a>
   </nav>
 
-  <div class="menu-toggle" id="menu-toggle">
+  <div class="menu-toggle" onclick="toggleMenu()">
     <i class="fa-solid fa-bars"></i>
   </div>
-
 </header>
 
 <!-- HERO -->
 <section id="hero" class="hero">
-  <h1>Engineering Solutions for Steel & Industrial Plants</h1>
-  <p>
-    We provide engineering design, manufacturing, maintenance, and spare parts 
-    solutions for high-performance industrial operations.
-  </p>
 
-  <div class="hero-btns">
-    <a href="#contact" class="btn primary">Get a Quote</a>
-    <a href="#services" class="btn outline">Our Services</a>
+  <div class="hero-slider">
+    <img src="img/slider1.jpg" class="active">
+    <img src="img/slider2.jpg">
+    <img src="img/slider3.jpg">
   </div>
+
+  <div class="hero-overlay"></div>
+
+  <div class="hero-content">
+    <h1>Engineering Solutions for Steel & Industrial Plants</h1>
+    <p>
+      We provide engineering design, manufacturing, maintenance, and spare parts 
+      solutions for high-performance industrial operations.
+    </p>
+
+    <div class="hero-btns">
+      <a href="#contact" class="btn primary">Get a Quote</a>
+      <a href="#services" class="btn outline">Our Services</a>
+    </div>
+  </div>
+
 </section>
 
 <!-- TRUST -->
 <section class="trust">
-  <div><h3 class="counter" data-target="50">0</h3><p>Projects</p></div>
-  <div><h3 class="counter" data-target="10">0</h3><p>Clients</p></div>
-  <div><h3 class="counter" data-target="5">0</h3><p>Years Experience</p></div>
+  <div><h3>50+</h3><p>Projects</p></div>
+  <div><h3>10+</h3><p>Clients</p></div>
+  <div><h3>5+</h3><p>Years Experience</p></div>
 </section>
 
 <!-- SERVICES -->
@@ -59,11 +69,10 @@
   <h2>Our Services</h2>
 
   <div class="grid">
-
     <div class="card">
       <i class="fa-solid fa-gears icon"></i>
       <h3>Engineering Design</h3>
-      <p>Custom engineering solutions tailored for steel plants and heavy industries.</p>
+      <p>Custom engineering solutions tailored for industrial needs.</p>
     </div>
 
     <div class="card">
@@ -75,7 +84,7 @@
     <div class="card">
       <i class="fa-solid fa-screwdriver-wrench icon"></i>
       <h3>Maintenance</h3>
-      <p>Efficient plant maintenance ensuring uninterrupted operations.</p>
+      <p>Efficient plant maintenance services.</p>
     </div>
 
     <div class="card">
@@ -83,7 +92,6 @@
       <h3>Spare Parts</h3>
       <p>Reliable and cost-effective supply solutions.</p>
     </div>
-
   </div>
 </section>
 
@@ -122,6 +130,7 @@
       <img src="img/pic5.png">
       <img src="img/pic6.png">
 
+      <!-- repeat for smooth loop -->
       <img src="img/pic1.png">
       <img src="img/pic2.png">
       <img src="img/pic3.png">
@@ -143,32 +152,20 @@
 </footer>
 
 <script>
-// COUNTER
-document.querySelectorAll(".counter").forEach(counter=>{
-  const update=()=>{
-    const target=+counter.getAttribute("data-target");
-    const count=+counter.innerText;
-    const inc=target/100;
-    if(count<target){
-      counter.innerText=Math.ceil(count+inc);
-      setTimeout(update,20);
-    }else{
-      counter.innerText=target+"+";
-    }
-  };
-  update();
-});
-
-// NAVBAR SCROLL
-window.addEventListener("scroll",()=>{
-  document.getElementById("navbar")
-  .classList.toggle("scrolled",window.scrollY>50);
-});
-
 // MOBILE MENU
-document.getElementById("menu-toggle").onclick=()=>{
+function toggleMenu() {
   document.getElementById("nav-links").classList.toggle("active");
-};
+}
+
+// HERO SLIDER
+let slides = document.querySelectorAll(".hero-slider img");
+let index = 0;
+
+setInterval(() => {
+  slides[index].classList.remove("active");
+  index = (index + 1) % slides.length;
+  slides[index].classList.add("active");
+}, 4000);
 </script>
 
 </body>

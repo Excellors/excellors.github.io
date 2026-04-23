@@ -1,34 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Excellors Engineering Solutions</title>
-  <link rel="stylesheet" href="main.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Excellors Engineering Solutions</title>
 
-  <!-- ICONS -->
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/main.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
 </head>
-
 <body>
 
 <!-- NAVBAR -->
 <header class="navbar">
   <div class="logo">
-    <img src="img/logo.png" alt="logo">
+    <img src="img/logo_dark.png" alt="logo">
   </div>
 
-  <ul class="nav-links">
-    <li><a href="#">Home</a></li>
-    <li><a href="#services">Services</a></li>
-    <li><a href="#industries">Industries</a></li>
-    <li><a href="#clients">Clients</a></li>
-    <li><a href="#contact">Contact</a></li>
-  </ul>
+  <nav id="nav-links">
+    <a href="#hero">Home</a>
+    <a href="#services">Services</a>
+    <a href="#industries">Industries</a>
+    <a href="#clients">Clients</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <div class="menu-toggle" onclick="toggleMenu()">
+    <i class="fa-solid fa-bars"></i>
+  </div>
 </header>
 
 <!-- HERO -->
-<section class="hero">
+<section id="hero" class="hero">
 
   <div class="hero-slider">
     <img src="img/slider_1.png" class="active">
@@ -41,93 +45,84 @@
   <div class="hero-content">
     <h1>Engineering Solutions for Steel & Industrial Plants</h1>
     <p>
-      We provide engineering design, manufacturing, maintenance, and spare parts
+      We provide engineering design, manufacturing, maintenance, and spare parts 
       solutions for high-performance industrial operations.
     </p>
 
-    <div class="hero-buttons">
-      <a href="#" class="btn-primary">Get a Quote</a>
-      <a href="#services" class="btn-outline">Our Services</a>
+    <div class="hero-btns">
+      <a href="#contact" class="btn primary">Get a Quote</a>
+      <a href="#services" class="btn outline">Our Services</a>
     </div>
   </div>
 
 </section>
 
-<!-- STATS -->
-<section class="stats">
-  <div class="stat">
-    <h2>50+</h2>
-    <p>Projects</p>
-  </div>
-  <div class="stat">
-    <h2>10+</h2>
-    <p>Clients</p>
-  </div>
-  <div class="stat">
-    <h2>5+</h2>
-    <p>Years Experience</p>
-  </div>
+<!-- TRUST -->
+<section class="trust">
+  <div><h3>50+</h3><p>Projects</p></div>
+  <div><h3>10+</h3><p>Clients</p></div>
+  <div><h3>5+</h3><p>Years Experience</p></div>
 </section>
 
 <!-- SERVICES -->
-<section id="services" class="services">
+<section id="services" class="section">
   <h2>Our Services</h2>
 
-  <div class="service-grid">
-    <div class="service-card">
-      <i class="fas fa-cogs"></i>
+  <div class="grid">
+    <div class="card">
+      <i class="fa-solid fa-gears icon"></i>
       <h3>Engineering Design</h3>
-      <p>Custom industrial solutions tailored for your needs.</p>
+      <p>Custom engineering solutions tailored for industrial needs.</p>
     </div>
 
-    <div class="service-card">
-      <i class="fas fa-industry"></i>
+    <div class="card">
+      <i class="fa-solid fa-industry icon"></i>
       <h3>Manufacturing</h3>
-      <p>High-quality spare parts production.</p>
+      <p>High-quality production of industrial spare parts.</p>
     </div>
 
-    <div class="service-card">
-      <i class="fas fa-tools"></i>
+    <div class="card">
+      <i class="fa-solid fa-screwdriver-wrench icon"></i>
       <h3>Maintenance</h3>
       <p>Efficient plant maintenance services.</p>
     </div>
 
-    <div class="service-card">
-      <i class="fas fa-box"></i>
+    <div class="card">
+      <i class="fa-solid fa-cubes icon"></i>
       <h3>Spare Parts</h3>
-      <p>Reliable supply chain solutions.</p>
+      <p>Reliable and cost-effective supply solutions.</p>
     </div>
   </div>
 </section>
 
 <!-- INDUSTRIES -->
-<section id="industries" class="industries">
+<section id="industries" class="dark-section">
   <h2>Industries We Serve</h2>
 
-  <div class="industry-grid">
-    <div class="industry-card">
+  <div class="grid">
+    <div class="dark-card">
       <h3>Steel Plants</h3>
-      <p>End-to-end engineering solutions</p>
+      <p>End-to-end engineering solutions.</p>
     </div>
 
-    <div class="industry-card">
-      <h3>Manufacturing</h3>
-      <p>Optimized production support</p>
+    <div class="dark-card">
+      <h3>Manufacturing Units</h3>
+      <p>Optimized production support.</p>
     </div>
 
-    <div class="industry-card">
+    <div class="dark-card">
       <h3>Heavy Industries</h3>
-      <p>Large-scale industrial systems</p>
+      <p>Large-scale industrial systems support.</p>
     </div>
   </div>
 </section>
 
 <!-- CLIENTS -->
-<section id="clients" class="clients">
+<section id="clients" class="section">
   <h2>Our Clients</h2>
 
-  <div class="logo-slider">
-    <div class="logo-track">
+  <div class="clients-slider">
+    <div class="clients-track">
       <img src="img/pic1.png">
       <img src="img/pic2.png">
       <img src="img/pic3.png">
@@ -147,7 +142,7 @@
       <img src="img/pic17.png">
       <img src="img/pic18.png">
       <img src="img/pic19.png">
-      
+
       <!-- repeat for smooth loop -->
       <img src="img/pic1.png">
       <img src="img/pic2.png">
@@ -155,7 +150,7 @@
       <img src="img/pic4.png">
       <img src="img/pic5.png">
       <img src="img/pic6.png">
-      <img src="img/pic7.png">  
+      <img src="img/pic7.png">
       <img src="img/pic8.png">
       <img src="img/pic9.png">
       <img src="img/pic10.png">
@@ -173,29 +168,30 @@
 </section>
 
 <!-- CTA -->
-<section class="cta">
-  <h2>Ready to Optimize Your Plant?</h2>
-  <a href="#" class="btn-primary">Request a Quote</a>
+<section id="contact" class="cta">
+  <h2>Ready to Optimize Your Plant Operations?</h2>
+  <a href="#" class="btn primary">Request a Quote</a>
 </section>
 
-<!-- FOOTER -->
 <footer class="footer">
   <p>© 2026 Excellors Engineering Solutions</p>
 </footer>
 
-<!-- SLIDER SCRIPT -->
 <script>
+// MOBILE MENU
+function toggleMenu() {
+  document.getElementById("nav-links").classList.toggle("active");
+}
+
+// HERO SLIDER
 let slides = document.querySelectorAll(".hero-slider img");
 let index = 0;
 
-function changeSlide(){
-  slides.forEach(slide => slide.classList.remove("active"));
-  slides[index].classList.add("active");
+setInterval(() => {
+  slides[index].classList.remove("active");
   index = (index + 1) % slides.length;
-}
-
-changeSlide();
-setInterval(changeSlide, 4000);
+  slides[index].classList.add("active");
+}, 4000);
 </script>
 
 </body>

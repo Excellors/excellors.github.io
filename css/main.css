@@ -14,11 +14,9 @@ body{font-family:'Inter',sans-serif;color:#333;}
 
 /* LOGO */
 .logo img {
-  width: 140px;         /* bigger container */
-  height: 50px;
-  object-fit: cover;
-  transform: scale(1.8);  /* 🔥 zoom into actual logo */
-  transform-origin: left center;
+  height: 60px;     /* control by height instead of width */
+  width: auto;      /* keep aspect ratio */
+  display: block;
 }
 
 /* NAV LINKS */

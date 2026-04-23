@@ -13,10 +13,12 @@ body{font-family:'Inter',sans-serif;color:#333;}
 }
 
 /* LOGO */
-.logo img{
-  width:110px;     /* FIXED BIG LOGO */
-  height:45px;
-  object-fit:cover;  /* removes empty space effect */
+.logo img {
+  width: 140px;         /* bigger container */
+  height: 50px;
+  object-fit: cover;
+  transform: scale(1.8);  /* 🔥 zoom into actual logo */
+  transform-origin: left center;
 }
 
 /* NAV LINKS */

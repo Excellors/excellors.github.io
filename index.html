@@ -15,7 +15,7 @@
 <!-- NAVBAR -->
 <header class="navbar">
   <div class="logo">
-    <img src="img/logo_dark.png" alt="logo">
+    <img src="./img/logo_dark.png" alt="logo">
   </div>
 
   <nav id="nav-links">
@@ -32,12 +32,12 @@
 </header>
 
 <!-- HERO -->
-<section id="hero" class="hero">
+<section class="hero">
 
   <div class="hero-slider">
-    <img src="img/slider_1.png" class="active">
-    <img src="img/slider_2.jpg">
-    <img src="img/slider_3.jpg">
+    <img src="./img/slider1.png" class="active">
+    <img src="./img/slider2.jpg">
+    <img src="./img/slider3.jpg">
   </div>
 
   <div class="hero-overlay"></div>
@@ -123,47 +123,46 @@
 
   <div class="clients-slider">
     <div class="clients-track">
-      <img src="img/pic1.png">
-      <img src="img/pic2.png">
-      <img src="img/pic3.png">
-      <img src="img/pic4.png">
-      <img src="img/pic5.png">
-      <img src="img/pic6.png">
-      <img src="img/pic7.png">
-      <img src="img/pic8.png">
-      <img src="img/pic9.png">
-      <img src="img/pic10.png">
-      <img src="img/pic11.png">
-      <img src="img/pic12.png">
-      <img src="img/pic13.png">
-      <img src="img/pic14.png">
-      <img src="img/pic15.png">
-      <img src="img/pic16.png">
-      <img src="img/pic17.png">
-      <img src="img/pic18.png">
-      <img src="img/pic19.png">
-      
+      <img src="./img/pic1.png">
+      <img src="./img/pic2.png">
+      <img src="./img/pic3.png">
+      <img src="./img/pic4.png">
+      <img src="./img/pic5.png">
+      <img src="./img/pic6.png">
+      <img src="./img/pic7.png">
+      <img src="./img/pic8.png">
+      <img src="./img/pic9.png">
+      <img src="./img/pic10.png">
+      <img src="./img/pic11.png">
+      <img src="./img/pic12.png">
+      <img src="./img/pic13.png">
+      <img src="./img/pic14.png">
+      <img src="./img/pic15.png">
+      <img src="./img/pic16.png">
+      <img src="./img/pic17.png">
+      <img src="./img/pic18.png">
+      <img src="./img/pic19.png">
 
-      <!-- repeat for smooth loop -->
-      <img src="img/pic1.png">
-      <img src="img/pic2.png">
-      <img src="img/pic3.png">
-      <img src="img/pic4.png">
-      <img src="img/pic5.png">
-      <img src="img/pic6.png">
-      <img src="img/pic7.png">
-      <img src="img/pic8.png">
-      <img src="img/pic9.png">
-      <img src="img/pic10.png"> 
-      <img src="img/pic11.png">
-      <img src="img/pic12.png">
-      <img src="img/pic13.png">
-      <img src="img/pic14.png">
-      <img src="img/pic15.png">   
-      <img src="img/pic16.png">
-      <img src="img/pic17.png">
-      <img src="img/pic18.png">
-      <img src="img/pic19.png">
+      <!-- duplicate for loop -->
+      <img src="./img/pic1.png">
+      <img src="./img/pic2.png">
+      <img src="./img/pic3.png">
+      <img src="./img/pic4.png">
+      <img src="./img/pic5.png">
+      <img src="./img/pic6.png">
+      <img src="./img/pic7.png">
+      <img src="./img/pic8.png">
+      <img src="./img/pic9.png">
+      <img src="./img/pic10.png">
+      <img src="./img/pic11.png">
+      <img src="./img/pic12.png">
+      <img src="./img/pic13.png">
+      <img src="./img/pic14.png">
+      <img src="./img/pic15.png">
+      <img src="./img/pic16.png">
+      <img src="./img/pic17.png">
+      <img src="./img/pic18.png">
+      <img src="./img/pic19.png">
     </div>
   </div>
 </section>
@@ -179,16 +178,18 @@
 </footer>
 
 <script>
-window.addEventListener("DOMContentLoaded", function () {
+// MOBILE MENU
+function toggleMenu() {
+  document.getElementById("nav-links").classList.toggle("active");
+}
 
+// HERO SLIDER FIXED
+window.addEventListener("DOMContentLoaded", function () {
   const slides = document.querySelectorAll(".hero-slider img");
   let index = 0;
 
   function showSlide(i) {
-    slides.forEach((slide) => {
-      slide.classList.remove("active");
-    });
-
+    slides.forEach(slide => slide.classList.remove("active"));
     slides[i].classList.add("active");
   }
 
@@ -196,7 +197,6 @@ window.addEventListener("DOMContentLoaded", function () {
     index = (index + 1) % slides.length;
     showSlide(index);
   }, 4000);
-
 });
 </script>
 

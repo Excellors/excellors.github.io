@@ -391,3 +391,50 @@ h2 {
     font-size: 30px;
   }
 }
+/* ===== ABOUT PAGE ===== */
+
+.container {
+  max-width: 1100px;
+  margin: auto;
+  padding: 20px;
+}
+
+.about-section {
+  padding: 60px 0;
+}
+
+.about-section h2 {
+  font-size: 32px;
+  margin-bottom: 10px;
+}
+
+.about-subtitle {
+  color: #555;
+  margin-bottom: 30px;
+}
+
+.about-content {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 40px;
+}
+
+.about-text h3 {
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.about-box {
+  background: #f8f9fa;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.about-box ul {
+  list-style: none;
+  padding: 0;
+}
+
+.about-box li {
+  margin-bottom: 10px;
+}

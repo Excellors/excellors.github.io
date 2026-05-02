@@ -498,8 +498,9 @@ body.page {
 }
 
 .container {
-  max-width: 1000px;
+  max-width: 1200px;   /* increase width */
   margin: auto;
+  padding: 0 40px;     /* control side spacing */
 }
 
 .about-subtitle {
@@ -756,4 +757,10 @@ body.page {
 }
 .about-text {
   max-width: 650px;
+}
+.navbar {
+  padding: 15px 80px;
+}
+.about-section {
+  padding: 80px 0;
 }

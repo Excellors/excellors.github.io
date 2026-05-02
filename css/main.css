@@ -832,3 +832,14 @@ body.page {
   font-size: 14px;
   line-height: 1.6;
 }
+@media (max-width: 900px) {
+  .industry-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .industry-grid {
+    grid-template-columns: 1fr;
+  }
+}

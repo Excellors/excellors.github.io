@@ -991,3 +991,12 @@ text-decoration: none;
 grid-template-columns: 1fr;
 }
 }
+.services-section {
+  width: 100%;
+}
+
+.services-section .container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 20px;
+}

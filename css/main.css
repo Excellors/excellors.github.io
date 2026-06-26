@@ -785,7 +785,10 @@ img {
 .page-hero {
   position: relative;
   background-color: var(--primary-dark);
-  padding: 120px 0 80px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 140px 0 100px;
   color: #ffffff;
   text-align: center;
   overflow: hidden;
@@ -798,7 +801,8 @@ img {
   left: 0;
   width: 100%;
   height: 100%;
-  background: radial-gradient(circle at 80% 20%, rgba(59, 130, 246, 0.2) 0%, transparent 60%);
+  background: linear-gradient(to bottom, rgba(15, 23, 42, 0.75) 0%, rgba(15, 23, 42, 0.85) 100%);
+  z-index: 1;
 }
 
 .page-hero h1 {
@@ -819,6 +823,32 @@ img {
   color: #cbd5e1;
   position: relative;
   z-index: 2;
+}
+
+/* Specific Page Hero Backgrounds */
+.about-hero {
+  background-image: url('../img/home-header.jpg');
+}
+.services-hero {
+  background-image: url('../img/service-header.jpg');
+}
+.engineering-hero {
+  background-image: url('../img/engineering-header.jpg');
+}
+.manufacture-hero {
+  background-image: url('../img/manufacture-header.jpg');
+}
+.liaisoning-hero {
+  background-image: url('../img/page-header.jpg');
+}
+.projects-hero {
+  background-image: url('../img/project-header.jpg');
+}
+.case-study-hero {
+  background-image: url('../img/singleproject-header.jpg');
+}
+.contact-hero {
+  background-image: url('../img/home-header.jpg');
 }
 
 .breadcrumbs a {

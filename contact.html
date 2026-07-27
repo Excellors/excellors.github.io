@@ -84,7 +84,11 @@
         <h2>Send us a Message</h2>
         <p>Fill out the form below and our technical sales representative will respond within 24 hours.</p>
         
-        <form action="https://formspree.io/f/mnqeogww" method="POST" id="contact-form">
+        <form action="https://formsubmit.co/sales@excellores.com" method="POST" id="contact-form">
+          <input type="hidden" name="_subject" value="New Website Inquiry - Excellors Engineering">
+          <input type="hidden" name="_captcha" value="false">
+          <input type="hidden" name="_template" value="table">
+
           <div class="form-row">
             <div class="form-group">
               <label class="form-label" for="form-name">Your Name</label>
@@ -106,7 +110,9 @@
             <textarea id="form-message" name="message" class="form-control" placeholder="Describe your specifications, dimensions or shutdown dates..." required></textarea>
           </div>
           
-          <button type="submit" class="btn btn-primary" style="width: 100%;">Send Request <i class="fa-solid fa-paper-plane"></i></button>
+          <button type="submit" id="form-submit-btn" class="btn btn-primary" style="width: 100%;">Send Request <i class="fa-solid fa-paper-plane"></i></button>
+
+          <div id="form-status" style="margin-top: 15px; display: none;"></div>
         </form>
       </div>
     </div>
@@ -212,6 +218,69 @@
           icon.classList.add('fa-bars');
         }
       }
+    });
+  }
+
+  // Contact Form Submission Handling
+  const contactForm = document.getElementById('contact-form');
+  const formStatus = document.getElementById('form-status');
+  const submitBtn = document.getElementById('form-submit-btn');
+
+  if (contactForm) {
+    contactForm.addEventListener('submit', function (e) {
+      e.preventDefault();
+      
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = 'Sending... <i class="fa-solid fa-spinner fa-spin"></i>';
+      }
+      
+      const formData = new FormData(contactForm);
+      const data = {};
+      formData.forEach((value, key) => { data[key] = value; });
+
+      fetch('https://formsubmit.co/ajax/sales@excellores.com', {
+        method: 'POST',
+        headers: { 
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify(data)
+      })
+      .then(response => response.json())
+      .then(data => {
+        if (formStatus) {
+          formStatus.style.display = 'block';
+          formStatus.style.padding = '12px 16px';
+          formStatus.style.borderRadius = '6px';
+          formStatus.style.fontSize = '14px';
+          formStatus.style.fontWeight = '500';
+          
+          if (data.success === 'true' || data.success === true) {
+            formStatus.style.backgroundColor = '#d4edda';
+            formStatus.style.color = '#155724';
+            formStatus.style.border = '1px solid #c3e6cb';
+            formStatus.innerHTML = '<i class="fa-solid fa-circle-check"></i> Thank you! Your message has been sent to sales@excellores.com.';
+            contactForm.reset();
+          } else {
+            formStatus.style.backgroundColor = '#d1ecf1';
+            formStatus.style.color = '#0c5460';
+            formStatus.style.border = '1px solid #bee5eb';
+            formStatus.innerHTML = '<i class="fa-solid fa-info-circle"></i> Submission received! If this is the first submission, please check sales@excellores.com inbox to confirm activation.';
+            contactForm.reset();
+          }
+        }
+      })
+      .catch(error => {
+        // Fallback to standard HTTP form POST action if fetch is blocked or fails
+        contactForm.submit();
+      })
+      .finally(() => {
+        if (submitBtn) {
+          submitBtn.disabled = false;
+          submitBtn.innerHTML = 'Send Request <i class="fa-solid fa-paper-plane"></i>';
+        }
+      });
     });
   }
 </script>
